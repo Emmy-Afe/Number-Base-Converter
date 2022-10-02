@@ -8,10 +8,13 @@ fun main(args: Array<String>) {
         println("Enter the number base of the number you would like to convert from (To quit type exit): ")
         option = readln()
         if (option != "exit") {
+            
+            //To collect targets
             val targets = numberBaseCal.selectTargets(option.toInt())
 
             do {
                 when {
+                    //To convert to other base from Base 10
                     targets[0] == 10 -> {
                         println("Enter number in base ${targets[0]} to convert to base ${targets[1]} (To go back type back)")
                         option = readln()
@@ -27,6 +30,7 @@ fun main(args: Array<String>) {
                         }
                     }
 
+                    //To convert to Base 10 from other base
                     targets[1] == 10 -> {
                         println("Enter number in base ${targets[0]} to convert to base ${targets[1]} (To go back type back)")
                         option = readln()
@@ -43,6 +47,7 @@ fun main(args: Array<String>) {
                         }
                     }
 
+                    //To convert from other base to base 10 and then to desired base
                     else -> {
                         println("Enter number in base ${targets[0]} to convert to base ${targets[1]} (To go back type back)")
                         option = readln()
